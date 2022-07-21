@@ -1,0 +1,714 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@font-face {
+  font-family: "marvelregular";
+  src: url("fonts/marvelregular-dj83-webfont.woff") format("woff2"),
+    url("fonts/marvelregular-dj83-webfont.woff2") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "dc_comicsregular";
+  src: url("fonts/dc_comics-webfont.woff") format("woff2"),
+    url("fonts/dc_comics-webfont.woff2") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "badaboom";
+  src: url("fonts/badabb__-webfont.woff2") format("woff2"),
+    url("fonts/badabb__-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  font-family: Montserrat;
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(9, 9, 121, 1) 35%,
+    rgba(0, 0, 0, 1) 100%
+  );
+  height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+}
+
+h3 {
+  font-weight: 400;
+}
+
+header {
+  background-color: rgba(0, 0, 0, 0.7);
+  width: 100vw;
+  height: 20vh;
+  display: flex;
+  position: relative;
+  box-shadow: -8px 1px 10px 10px rgba(0, 0, 0, 0.45);
+  top: 0;
+  z-index: 2;
+  align-items: center;
+  justify-content: right;
+}
+
+#carousel {
+  width: 80vw;
+  height: 40vh;
+  background-image: url(assets/slider0.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  transition: ease-in-out 1s;
+  margin: auto;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+#left-chevron {
+  filter: invert();
+  width: 2rem;
+  position: absolute;
+  margin-left: 1.5rem;
+  left: 0;
+  top: calc(20vh - 1rem);
+  cursor: pointer;
+  transition: ease-in-out 0.3s;
+}
+
+#left-chevron:hover {
+  width: 2.5rem;
+}
+
+#right-chevron {
+  filter: invert();
+  width: 2rem;
+  position: absolute;
+  margin-right: 1.5rem;
+  right: 0;
+  top: calc(20vh - 1rem);
+  cursor: pointer;
+  transition: ease-in-out 0.3s;
+}
+
+#right-chevron:hover {
+  width: 2.5rem;
+}
+
+/* ------------------------------------------------------------------- */
+
+#contenido {
+  background-color: rgba(0, 0, 0, 0.6);
+  width: 70vw;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  transition: ease-in-out 0.4s;
+  font-family: 'Montserrat';
+}
+
+#comic-card {
+  background-color: white;
+  width: 10rem;
+  height: 10rem;
+}
+
+#card {
+  margin: 1rem;
+  padding: 1rem;
+  text-align: center;
+  color: rgb(255, 255, 255);
+  padding-top: 1rem;
+  border-radius: 0.2rem;
+  transition: ease-in-out 0.5s all;
+}
+
+/*INDEX ------------------------------------------------------------------- */
+
+.menu-btn {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80px;
+  height: 80px;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+}
+
+.menu-btn__burger {
+  width: 40px;
+  height: 4px;
+  background-color: white;
+  transition: all 0.5s ease-in-out;
+  justify-content: end;
+}
+
+.menu-btn__burger::before,
+.menu-btn__burger::after {
+  content: "";
+  position: absolute;
+  width: 40px;
+  height: 4px;
+  background-color: white;
+  transition: all 0.5s ease-in-out;
+  margin-left: auto;
+}
+
+.menu-btn__burger::before {
+  transform: translateY(-16px);
+}
+
+.menu-btn__burger::after {
+  transform: translateY(16px);
+}
+
+.menu-btn.abierto .menu-btn__burger {
+  transform: translateX(-50px);
+  background: transparent;
+}
+
+.menu-btn.abierto .menu-btn__burger::before {
+  transform: rotate(45deg) translate(35px, -35px);
+}
+.menu-btn.abierto .menu-btn__burger::after {
+  transform: rotate(-45deg) translate(35px, 35px);
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+#fotoPerfil {
+  border-radius: 50%;
+  width: 3rem;
+  transition: ease-in-out 0.2s;
+  cursor: pointer;
+}
+
+#fotoPerfil:hover {
+  box-shadow: 0px 1px 0px 5px rgba(21, 18, 135, 0.75);
+  -webkit-box-shadow: 0px 1px 0px 5px rgba(21, 18, 135, 0.75);
+  -moz-box-shadow: 0px 1px 0px 5px rgba(21, 18, 135, 0.75);
+}
+
+header ul {
+  color: white;
+  display: flex;
+  list-style: none;
+  align-items: center;
+  margin-right: 5vw;
+}
+
+ul li {
+  margin-right: 2rem;
+  font-weight: 500;
+  font-size: 1.5rem;
+  cursor: pointer;
+  font-family: marvelregular;
+  transition: ease-in-out 0.3s;
+}
+
+ul li:hover {
+  font-size: 1.9rem;
+}
+
+#home_border {
+  width: 0rem;
+  height: 2rem;
+  background-color: rgb(20, 53, 242);
+  position: absolute;
+  z-index: -2;
+  transition: ease-in-out 0.1s;
+}
+
+#catalogo_border {
+  width: 0rem;
+  height: 2rem;
+  background-color: rgb(20, 53, 242);
+  position: absolute;
+  z-index: -2;
+  transition: ease-in-out 0.1s;
+}
+
+#logo {
+  width: 10vw;
+  margin: auto;
+  margin-left: 45vw;
+}
+
+#asideBar {
+  width: 20vw;
+  height: 190vh;
+  background: transparent;
+  position: absolute;
+  top: 0;
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column;
+  z-index: 5;
+  left: -16vw;
+  transition: ease-in-out 0.3s;
+  color: white;
+}
+
+#asideBar ul {
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+}
+
+#lista-editoriales {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+#marvel-list {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  padding: 1vw 1vw 2vw 1vw;
+  transition: ease-in-out 0.2s;
+  cursor: pointer;
+  font-family: "marvelregular";
+}
+
+#marvel-list:hover {
+  font-size: 1.8rem;
+}
+
+#dc-list {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  padding: 1vw 1vw 2vw 1vw;
+  transition: ease-in-out 0.2s;
+  cursor: pointer;
+  font-family: "dc_comicsregular";
+}
+
+#dc-list:hover {
+  font-size: 3.4rem;
+}
+
+#white-list img {
+  width: 2.5rem;
+  transition: ease-in-out 0.2s;
+  margin-bottom: 1rem;
+  padding: 1vw 1vw 2vw 1vw;
+  cursor: pointer;
+}
+
+#white-list img:hover {
+  width: 2.2rem;
+}
+
+#vertigo-list {
+  width: 3.5rem;
+  transition: ease-in-out 0.2s;
+  margin-bottom: 1rem;
+  padding: 1vw 1vw 2vw 1vw;
+  cursor: pointer;
+}
+
+#vertigo-list:hover {
+  width: 3rem;
+}
+
+#configuracion img {
+  width: 2rem;
+  cursor: pointer;
+  margin-bottom: 1rem;
+  margin-top: 1.5vw;
+  transition: ease-in-out 0.2s;
+}
+
+#configuracion img:hover {
+  width: 1.8rem;
+  animation-name: girar;
+}
+
+/* --------------------------------------------------------------------- */
+
+#card-img {
+  width: 8vw;
+  transition: ease-in-out 0.3s;
+}
+
+#card-img:hover {
+  width: 9vw;
+  box-shadow: -8px 7px 0px 0px rgba(21, 18, 135, 0.75);
+  -webkit-box-shadow: -8px 7px 0px 0px rgba(21, 18, 135, 0.75);
+  -moz-box-shadow: -8px 7px 0px 0px rgba(21, 18, 135, 0.75);
+}
+
+/* -------------------------------------------------------- */
+
+#recomendados {
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.7);
+  box-shadow: -8px 1px 10px 10px rgba(0, 0, 0, 0.45);
+  position: absolute;
+  top: 65vh;
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+  transition: ease-in-out 0.3s all;
+  z-index: 1;
+}
+
+#irIzquierda {
+  width: 15vw;
+  height: 17vw;
+  background-color: rgba(240, 248, 255, 0.2);
+  position: absolute;
+  z-index: 3;
+  left: 0;
+  top: 32vw;
+}
+
+#irDerecha {
+  width: 15vw;
+  height: 17vw;
+  background-color: rgba(240, 248, 255, 0.2);
+  position: absolute;
+  z-index: 5;
+  right: 0;
+  top: 32vw;
+}
+
+/* -------------------------------------------------------- obras */
+
+#obras {
+  width: 80vw;
+  position: absolute;
+  top: 55vw;
+  left: 23vw;
+}
+
+#obras h2 {
+  color: white;
+  font-family: "badaboom";
+  letter-spacing: 0.2rem;
+  font-size: 3rem;
+  
+}
+
+#img-obras1 {
+  width: 20vw;
+  transform: rotate(5deg);
+  position: absolute;
+  z-index: 4;
+  transition: ease-in-out 0.3s;
+  box-shadow: 1rem 1rem 2rem black;
+  cursor: pointer;
+  top: 5vw;
+}
+
+#img-obras1:hover {
+  width: 22vw;
+  transform: rotate(-5deg);
+  position: absolute;
+  z-index: 4;
+  box-shadow: none;
+}
+
+#img-obras2 {
+  width: 15vw;
+  transform: rotate(-5deg);
+  position: absolute;
+  z-index: 3;
+  left: 20vw;
+  top: 5vw;
+  transition: ease-in-out 0.3s;
+  box-shadow: 1rem 1rem 2rem black;
+  cursor: pointer;
+}
+
+#img-obras2:hover {
+  width: 18vw;
+  transform: rotate(5deg);
+  position: absolute;
+  z-index: 4;
+  box-shadow: none;
+}
+
+#img-obras3 {
+  width: 10vw;
+  transform: rotate(5deg);
+  position: absolute;
+  z-index: 2;
+  left: 35vw;
+  top: 10vw;
+  transition: ease-in-out 0.3s;
+  box-shadow: 1rem 1rem 2rem black;
+  cursor: pointer;
+}
+
+#img-obras3:hover {
+  width: 13vw;
+  transform: rotate(-5deg);
+  position: absolute;
+  z-index: 4;
+  box-shadow: none;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 40vw;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 5vw;
+  left: 30vw;
+  transition: ease-in-out 0.4s;
+  opacity: 0;
+}
+
+form input {
+  margin: 0.5rem;
+  padding: 0.7rem;
+  border: none;
+  width: 20vw;
+}
+
+label {
+  color: white;
+  font-family: "badaboom";
+  font-size: 1.3rem;
+  letter-spacing: 0.1rem;
+}
+
+#boton-form {
+  background-color: rgb(255, 217, 0);
+  font-family: "badaboom";
+  font-size: 1.3rem;
+}
+
+#errorNombre {
+  color: red;
+  font-size: 0.8rem;
+  font-style: italic;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-bottom: 1rem;
+}
+
+#errorContraseña {
+  color: red;
+  font-size: 0.8rem;
+  font-style: italic;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-bottom: 1rem;
+}
+
+#errorReContraseña {
+  color: red;
+  font-size: 0.8rem;
+  font-style: italic;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-bottom: 1rem;
+}
+
+#errorMail {
+  color: red;
+  font-size: 0.8rem;
+  font-style: italic;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-bottom: 1rem;
+}
+
+#registroExito {
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.41);
+  backdrop-filter: blur(4.4px);
+  position: absolute;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  z-index: 8;
+}
+
+#exito {
+  width: 20vw;
+  height: 10vw;
+  background-color: rgb(255, 234, 0);
+  background-image: url(assets/fondo.png);
+  box-shadow: -1rem 1rem rgba(0, 0, 0, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transition: ease-in-out 0.5s;
+}
+
+#exito h3 {
+  font-family: "badaboom";
+  font-size: 2rem;
+}
+
+#exito img {
+  width: 1rem;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  cursor: pointer;
+}
+
+/* catalogo */
+
+#buscador {
+  width: 70vw;
+  height: 20vh;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#buscador input {
+  padding: 1rem;
+  width: 5vw;
+  border: none;
+  border-radius: 2rem;
+  transition: ease-in-out 0.2s;
+  background-image: url(assets/magnifying-glass-solid.svg);
+  background-repeat: no-repeat;
+  background-size: 1.4rem;
+  background-position: 10px;
+}
+
+/* ------------------------------------------------- detalles */
+
+#contenidoDetalles {
+  width: 50vw;
+  margin: auto;
+  padding: 2vw;
+  display: flex;
+  color: white;
+}
+
+#contenidoDetalles img {
+  width: 20vw;
+  margin-right: 2rem;
+}
+
+#datosDetalles {
+  display: flex;
+  flex-direction: column;
+}
+
+#datosDetalles h1 {
+  margin-bottom: 2rem;
+}
+
+#datosDetalles p {
+  margin-bottom: 2rem;
+}
+
+#datosDetalles span {
+  font-weight: 600;
+}
+
+#puntuacion {
+  width: 5rem;
+  height: 5rem;
+}
+
+#puntuacion img {
+  width: 10rem;
+  height: 5rem;
+}
+
+#colorpuntuacion {
+  width: 15rem;
+  height: 3rem;
+}
+
+
+
+#quizas{
+  width: 30vw;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+}
+
+#quizas img {
+  width: 5vw;
+  height: 7vw;
+}
+
+#datosDetalles h3{
+width: 20vw;
+margin-bottom: 2rem;
+font-weight: 700;
+}
+
+
+
+
+#catalogoMarvel {
+  background-color: rgba(0, 0, 0, 0.6);
+  width: 70vw;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  transition: ease-in-out 0.4s;
+  font-family: 'Montserrat';
+}
+
+#catalogoDc {
+  background-color: rgba(0, 0, 0, 0.6);
+  width: 70vw;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  transition: ease-in-out 0.4s;
+  font-family: 'Montserrat';
+}
+
+#catalogoDarkHorse {
+  background-color: rgba(0, 0, 0, 0.6);
+  width: 70vw;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  transition: ease-in-out 0.4s;
+  font-family: 'Montserrat';
+}
+#catalogoVertigo {
+  background-color: rgba(0, 0, 0, 0.6);
+  width: 70vw;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  transition: ease-in-out 0.4s;
+  font-family: 'Montserrat';
+}
+
+
+
+
+
+
+footer {
+  width: 100vw;
+  height: 10vh;
+  background-color: black;
+  position: absolute;
+  bottom: -55vw;
+  left: 0;
+}
