@@ -26,6 +26,18 @@ leftChevron.addEventListener("click", imagenAnterior);
 
 cargarDc()
 
+function abrirAside() {
+  if (screen.width > 700) {
+    abrirAsideDesktop();
+  }
+  if (screen.width < 700) {
+    abrirAsideMobile();
+  }
+}
+
+
+
+
 function clickBurger() {
     if (!estadoBurger) {
       burger.classList.add("abierto");
@@ -36,7 +48,7 @@ function clickBurger() {
     }
   }
   
-  function abrirAside() {
+  function abrirAsideDesktop() {
     if (!estadoAside) {
       asideBar.style.left = "0vw";
       asideBar.style.backgroundColor = "#06043d";
@@ -44,6 +56,20 @@ function clickBurger() {
       estadoAside = true;
     } else {
       asideBar.style.left = "-16vw";
+      asideBar.style.backgroundColor = "transparent";
+      asideBar.style.boxShadow = "none";
+      estadoAside = false;
+    }
+  }
+  
+  function abrirAsideMobile() {
+    if (!estadoAside) {
+      asideBar.style.left = "0vw";
+      asideBar.style.backgroundColor = "#06043d";
+      asideBar.style.boxShadow = "10px 20px 30px black";
+      estadoAside = true;
+    } else {
+      asideBar.style.left = "-35vw";
       asideBar.style.backgroundColor = "transparent";
       asideBar.style.boxShadow = "none";
       estadoAside = false;
